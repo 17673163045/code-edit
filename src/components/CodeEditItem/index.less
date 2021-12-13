@@ -1,0 +1,182 @@
+  ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .wrap{
+      border: 1px solid #ebedf1;
+      border-radius: 1px;
+  }
+  
+  .container{
+    width:100%;
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+
+  .titleWrap {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ebedf1;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-left: 3px solid #a862ea;
+    background-color: #f8f5ff;
+
+    position: relative;
+    padding-right: 136px;
+
+    .title{
+      outline: none;
+      letter-spacing: 1px;
+      word-break: break-all;
+    }
+
+    .add {
+      position: absolute;
+      top: 6px;
+      right:70px;
+      .menu {
+        z-index: 2;
+        width: 120px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+      }
+    }
+
+    .delete {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      .menu {
+        z-index: 2;
+        width: 120px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+      }
+    }
+  }
+  
+  .editorsContainer {
+    width: 50%;
+    float: left;
+    max-height: 90vh;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      cursor: pointer;
+      width: 8px;
+      height: 6px;
+      background-color: #f8f5ff;
+    }
+    &::-webkit-scrollbar-thumb {
+      cursor: pointer;
+      background-color: #e7daff;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+  
+  .editorWrap{
+      padding: 12px;
+      position: relative;
+      &.jsEditor {
+        width: 100%;
+      }
+      &.htmlEditor, &.cssEditor{
+        width: 100%;
+        :global {
+          .cm-scroller{
+            min-height: 100px;
+            max-height: 700px;
+          }
+        }
+      }
+      .codeCopy {
+        position: absolute;
+        z-index: 1;
+        top: 16px;
+        right: 20px;
+        font-size: 12px;
+        line-height: 1;
+        cursor: pointer;
+        color: hsla(0,0%,54.9%,.8);
+        transition: color .1s;
+      }
+      :global {
+        .cm-editor{
+          height: 100%;
+          letter-spacing: 1px;
+          color: #986801 !important;
+          background: #fafafa !important;
+          font-size: 18px !important;
+          font-family: Operator Mono,Consolas,Monaco,Menlo,monospace;
+          line-height: 18px;
+          border-radius: 2px;
+          box-shadow: 0 0 10px #e7daff;
+          outline: none !important;
+          scroll-behavior: smooth;
+          padding: 20px 0px;
+          &:hover, &:focus{
+            box-shadow: 0 0 20px #e7daff;
+          }
+        }
+        .cm-scroller{
+          padding: 0px 20px 0 0;
+          overflow: auto ;
+          &::-webkit-scrollbar {
+            cursor: pointer;
+            width: 4px;
+            height: 6px;
+            background-color: #f8f5ff;
+          }
+          &::-webkit-scrollbar-thumb {
+            cursor: pointer;
+            background-color: #e7daff;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+          }
+        }
+        .cm-activeLine{
+          background-color: #f4edff;
+        }
+        .cm-gutters{
+          background: #fafafa;
+          border-right: 1px solid #e7daff;
+        }
+        .cm-gutterElement.cm-activeLineGutter{
+          background-color: #f4edff;
+        }
+      }
+  }
+  
+  .iframeWrap{
+      width: 50%;
+      float: right;
+      padding: 12px;
+      position: relative;
+      & iframe {
+          width:100%;
+          min-height: 354px;
+          border:none;
+          outline: none;
+          letter-spacing: 1px;
+          color: #986801 !important;
+          background: #fafafa !important;
+          font-size: 18px !important;
+          font-family: Operator Mono,Consolas,Monaco,Menlo,monospace;
+          line-height: 18px;
+          border-radius: 2px;
+          box-shadow: 0 0 10px #e7daff;
+          scroll-behavior: smooth;
+          &:hover, &:focus{
+            box-shadow: 0 0 30px #e7daff;
+          }
+      }
+  }
+  
+  
